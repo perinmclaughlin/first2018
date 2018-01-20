@@ -35,6 +35,8 @@ class MyRobot(wpilib.SampleRobot):
         self.limit2 = wpilib.DigitalInput(2)
         
         self.position = wpilib.AnalogInput(2) #position from something?
+        print("Do test? \n")
+        test = raw_input("Y/N:")
         #self.testMotor(self.lfMotor)
         #self.testMotor(self.lbMotor)
         #self.testMotor(self.rfMotor)
@@ -49,6 +51,13 @@ class MyRobot(wpilib.SampleRobot):
         if motor.getPosition() <=1:
             print("motor failure: " + str(motor.getPosition()))
             sys.exit()
+
+    def testGyro(self):
+        if self.gyro.getAngle() > 1:
+            print("gyro angle misread: " + str(self.gyro.getAngle()))
+            sys.exit()
+        if self.gyro.getRate() != 0:
+            print("gyro rate misread: " + str(self.gyro.getRate()))
 
 
 
