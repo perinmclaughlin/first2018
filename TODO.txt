@@ -1,2 +1,22 @@
 Test Harness
-test for each wheel
+tests for sensors
+Field setup(config.json)
+Interpret game message
+Cross line auto
+Goto switch auto
+got scale auto
+
+
+
+
+
+
+
+
+Not yet built constraints:
+Place on scale
+Place on switch
+Climb arm
+Speed update
+Testing tests for realsies
+

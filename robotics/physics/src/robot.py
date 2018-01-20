@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 
+import time
 import wpilib
+import sys
 
 class MyRobot(wpilib.SampleRobot):
     '''Main robot class'''
@@ -33,10 +35,28 @@ class MyRobot(wpilib.SampleRobot):
         self.limit2 = wpilib.DigitalInput(2)
         
         self.position = wpilib.AnalogInput(2) #position from something?
-        
+        #self.testMotor(self.lfMotor)
+        #self.testMotor(self.lbMotor)
+        #self.testMotor(self.rfMotor)
+        #self.testMotor(self.rbMotor)
+
+
+    def testMotor(self, motor):
+        motor.setPosition(0) #ensure motor is at pos 0
+        motor.setSpeed(1.0) #test motors by setting speed
+        time.sleep(5)
+        motor.setSpeed(0)
+        if motor.getPosition() <=1:
+            print("motor failure: " + str(motor.getPosition()))
+            sys.exit()
+
+
+
+
+
     def disabled(self):
         '''Called when the robot is disabled'''
-        while self.isDisabled(): #actually disable stuff with delay
+        while self.isDisabled(): # pause timer, doubly shutdown
             wpilib.Timer.delay(0.01)
 
     def autonomous(self):
