@@ -36,11 +36,13 @@ class MyRobot(wpilib.SampleRobot):
         
         self.position = wpilib.AnalogInput(2) #position from something?
         print("Do test? \n")
-        test = raw_input("Y/N:")
-        #self.testMotor(self.lfMotor)
-        #self.testMotor(self.lbMotor)
-        #self.testMotor(self.rfMotor)
-        #self.testMotor(self.rbMotor)
+        test = input("Y/N:")
+        if test.lower() == "yes" or test.lower() == "y":
+            self.testMotor(self.lfMotor)
+            self.testMotor(self.lbMotor)
+            self.testMotor(self.rfMotor)
+            self.testMotor(self.rbMotor)
+            self.testGyro()
 
 
     def testMotor(self, motor):
