@@ -1,10 +1,10 @@
 Test Harness
-tests for sensors
+
 Field setup(config.json)
 Interpret game message
 Cross line auto
 Goto switch auto
-got scale auto
+goto scale auto
 
 
 
